@@ -1,4 +1,12 @@
 <script setup>
+
+
+
+
+import {
+  HeartIcon
+} from "@heroicons/vue/24/outline";
+
 const props = defineProps({
   data: Object,
 });
@@ -70,6 +78,14 @@ extractColorsAndSizes();
       <!-- attributes section-->
       <ProductsColors :data="colors"/>
       <ProductsSizes :data="sizes" />
+
+      <section class="flex items-center space-x-4">
+        
+        <ProductsCounter />
+        <button class="text-xs p-2.5 bg-lightIndigo rounded-sm text-white px-4">Add to Cart</button>
+
+        <HeartIcon class="h-6 w-6 text-lightIndigo" />
+      </section>
     </section>
   </div>
 </template>

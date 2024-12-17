@@ -1,7 +1,12 @@
 <script setup>
 const props = defineProps({
-  data: Array,
+  data: {
+    type: Array,
+    default: []
+  },
 });
+
+const currentSize = ref(null);
 </script>
 
 <template>
@@ -11,10 +16,14 @@ const props = defineProps({
     <section class="flex items-center gap-2 pt-2">
       <div
         v-for="size in data"
-        class="flex items-center gap-2 border border-lightIndigo p-2 px-4 rounded-md cursor-pointer"
+        :class="[
+          currentSize === size['size'] ? 'border-lightIndigo' : '',
+          'flex items-center gap-2 border p-2 px-4 rounded-md cursor-pointer',
+        ]"
+        @click="currentSize = size['size']"
       >
-       <span class="text-lightIndigo font-bold">{{ size.size }}</span>
-       <span class="text-sm text-lightGrey">${{ size.price }}</span> 
+        <span class="text-lightIndigo font-bold">{{ size.size }}</span>
+        <span class="text-sm text-lightGrey">${{ size.price }}</span>
       </div>
     </section>
   </div>

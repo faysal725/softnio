@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "nuxt3-leaflet",
     "@nuxtjs/color-mode",
-    '@formkit/nuxt'
   ],
   formkit: {
     // Experimental support for auto loading (see note):

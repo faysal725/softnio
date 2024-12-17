@@ -4,7 +4,6 @@
 /// <reference types="@pinia-plugin-persistedstate/nuxt" />
 /// <reference types="nuxt3-leaflet" />
 /// <reference types="@nuxtjs/color-mode" />
-/// <reference types="@formkit/nuxt" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference types="nuxt" />

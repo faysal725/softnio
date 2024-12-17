@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
   <div>
-    <p class="text-darkGrey font-medium text-lg capitalize">Colors</p>
+    <p class="text-darkGrey font-medium text-lg capitalize">Band Colors</p>
 
     <section class="flex items-center gap-2 pt-2">
       <div

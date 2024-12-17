@@ -9,13 +9,14 @@ let sizes = ref([]);
 function extractColorsAndSizes() {
   props.data.attributes.map((attr, index) => {
     let isColorExists = colors.value.includes(attr["color"]);
-    let isSizeExists = sizes.value.includes(attr["size"]);
+
+    let isSizeExists = sizes.value.some(size => size['size'] === attr["size"]);
 
     if (!isColorExists) {
       colors.value.push(attr["color"]);
     }
     if (!isSizeExists) {
-        sizes.value.push(attr["size"]);
+        sizes.value.push({size: attr["size"], price: attr["discountedPrice"]});
     }
   });
 }
@@ -65,8 +66,10 @@ extractColorsAndSizes();
         </div>
       </div>
 
+      
       <!-- attributes section-->
       <ProductsColors :data="colors"/>
+      <ProductsSizes :data="sizes" />
     </section>
   </div>
 </template>

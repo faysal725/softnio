@@ -1,5 +1,6 @@
 <script setup>
 const props = defineProps({
+  modelValue: String,
   data: {
     type: Array,
     default: []
@@ -8,8 +9,19 @@ const props = defineProps({
 
 
 const currentColor = ref(null)
+const emit = defineEmits(["update:modelValue"]);
+
+function colorSelection(color) {
+    currentColor.value = color 
+    emit("update:modelValue", currentColor.value);
+}
 
 
+onMounted(() => {
+  if (props.data.length > 0) {
+    colorSelection(props.data[0])
+  }
+})
 
 
 </script>
@@ -23,7 +35,7 @@ const currentColor = ref(null)
         v-for="color in data"
         :class="`border border-2  w-fit rounded-full cursor-pointer `"
         :style="`border-color: ${currentColor == color && color  }`"
-        @click="currentColor = color"
+        @click="colorSelection(color)"
       >
         <div
           :class="` h-4 w-4 rounded-full border border-2 p-2 border-white`"

@@ -7,6 +7,26 @@ const props = defineProps({
 });
 
 const currentSize = ref(null);
+const emit = defineEmits([
+  "updateSize",
+  "updatePrice",
+]);
+
+
+function colorNPriceSection(size, price) {
+  currentSize.value = size
+  
+  emit("updateSize", size);
+  emit("updatePrice", price);
+
+}
+
+
+onMounted(() => {
+  if (props.data.length > 0) {
+    colorNPriceSection(props.data[0]['size'], props.data[0]['price'])
+  }
+})
 </script>
 
 <template>
@@ -20,7 +40,7 @@ const currentSize = ref(null);
           currentSize === size['size'] ? 'border-lightIndigo' : '',
           'flex items-center gap-2 border p-2 px-4 rounded-md cursor-pointer',
         ]"
-        @click="currentSize = size['size']"
+        @click="colorNPriceSection(size['size'], size['price'])"
       >
         <span class="text-lightIndigo font-bold">{{ size.size }}</span>
         <span class="text-sm text-lightGrey">${{ size.price }}</span>

@@ -39,7 +39,7 @@ const products = [
       {
         color: "#816BFF",
         size: "XL",
-        salePrice: 99,
+        salePrice: 110,
         discountedPrice: 99,
         imgUrl: "/watch/purple.png",
       },
@@ -68,7 +68,7 @@ const products = [
       {
         color: "#1FCEC9",
         size: "XL",
-        salePrice: 99,
+        salePrice: 110,
         discountedPrice: 99,
         imgUrl: "/watch/cyan.png",
       },
@@ -97,7 +97,7 @@ const products = [
       {
         color: "#4B97D3",
         size: "XL",
-        salePrice: 99,
+        salePrice: 110,
         discountedPrice: 99,
         imgUrl: "/watch/blue.png",
       },
@@ -126,7 +126,7 @@ const products = [
       {
         color: "#3B4747",
         size: "XL",
-        salePrice: 99,
+        salePrice: 110,
         discountedPrice: 99,
         imgUrl: "/watch/black.png",
       },

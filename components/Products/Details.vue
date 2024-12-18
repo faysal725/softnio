@@ -15,6 +15,7 @@ const form = ref({
   color: "",
   size: "",
   price: "",
+  oldPrice: "",
 });
 
 function extractColorsAndSizes() {
@@ -30,7 +31,7 @@ function extractColorsAndSizes() {
       images.value.push({ color: attr["color"], imgSrc: attr["imgUrl"] })
     }
     if (!isSizeExists) {
-      sizes.value.push({ size: attr["size"], price: attr["discountedPrice"] });
+      sizes.value.push({ size: attr["size"], price: attr["discountedPrice"], oldPrice: attr["salePrice"] });
     }
   });
 }
@@ -50,11 +51,13 @@ extractColorsAndSizes();
     >
       <h1 class="text-2xl lg:text-4xl font-bold text-darkGrey">{{ props.data.name }}</h1>
 
+      <ProductsRating :rating="3" />
+
       <div class="flex gap-2 items-center">
         <span class="text-3xl font-normal text-lightGrey">
-          <strike>$12</strike>
+          <strike>${{ form.oldPrice ? form.oldPrice : '00' }}</strike>
         </span>
-        <span class="text-3xl font-semibold text-lightIndigo">$12</span>
+        <span class="text-3xl font-semibold text-lightIndigo">${{ form.price ? form.price : '00' }}</span>
       </div>
 
       <!-- description  -->
@@ -80,13 +83,13 @@ extractColorsAndSizes();
         </div>
       </div>
 
-      
       <!-- attributes section-->
       <ProductsColors v-model="form.color" :data="colors" />
       <ProductsSizes
         :data="sizes"
         @update-size="(size)=> (form.size = size)"
         @update-price="(price)=> (form.price = price)"
+        @update-oldprice="(oldPrice)=> (form.oldPrice = oldPrice)"
       />
 
       <section class="flex items-center space-x-4">

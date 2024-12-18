@@ -51,7 +51,7 @@ extractColorsAndSizes();
     >
       <h1 class="text-2xl lg:text-4xl font-bold text-darkGrey">{{ props.data.name }}</h1>
 
-      <ProductsRating :rating="3" />
+      <ProductsRating :rating="props.data.rating" :noOfPeople="props.data.peopleGaveReview" />
 
       <div class="flex gap-2 items-center">
         <span class="text-3xl font-normal text-lightGrey">

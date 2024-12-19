@@ -80,7 +80,7 @@ extractColorsAndSizes();
       class="col-span-12 lg:col-span-6 flex flex-col justify-center gap-6"
     >
       <div class="space-y-3">
-        <h1 class="text-2xl lg:text-4xl font-bold text-darkGrey">
+        <h1 class="text-2xl lg:text-4xl font-bold text-darkGrey capitalize">
           {{ props.data.name }}
         </h1>
 

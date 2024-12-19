@@ -78,14 +78,16 @@ extractColorsAndSizes();
     <section
       class="col-span-12 lg:col-span-6 flex flex-col justify-center gap-6"
     >
-      <h1 class="text-2xl lg:text-4xl font-bold text-darkGrey">
-        {{ props.data.name }}
-      </h1>
+      <div class="space-y-3">
+        <h1 class="text-2xl lg:text-4xl font-bold text-darkGrey">
+          {{ props.data.name }}
+        </h1>
 
-      <ProductsRating
-        :rating="props.data.rating"
-        :noOfPeople="props.data.peopleGaveReview"
-      />
+        <ProductsRating
+          :rating="props.data.rating"
+          :noOfPeople="props.data.peopleGaveReview"
+        />
+      </div>
 
       <div class="flex gap-2 items-center">
         <span class="text-3xl font-normal text-lightGrey">
@@ -95,7 +97,7 @@ extractColorsAndSizes();
           >${{ form.price ? form.price : "00" }}</span
         >
       </div>
-      
+
       <!-- description  -->
       <div>
         <p class="text-lg lg:text-xl leading-9 text-darkGrey">
@@ -130,12 +132,8 @@ extractColorsAndSizes();
 
       <section class="flex items-center space-x-4">
         <ProductsCounter v-model="form.noOfItem" />
-        <button
-          @click="addProductToStore"
-          class="text-xs p-2.5 bg-lightIndigo rounded-sm text-white px-4"
-        >
-          Add to Cart
-        </button>
+
+        <ButtonMd @click="addProductToStore" name="Add to Cart" />
 
         <HeartIcon class="h-6 w-6 text-lightIndigo cursor-pointer" />
       </section>

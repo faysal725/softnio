@@ -32,15 +32,22 @@ module.exports = {
       
     // --color-whitePrimary: #FDFCFA;
     // --color-whiteSecondary: #F3F1EF;
+    
+    // --color-lightYellow: #FFD200;
+    // --color-darkYellow: #FFD200;
+
       textColor: {
-        yellow: "var(--color-yellow)",
+        lightYellow: "var(--color-lightYellow)",
+        darkYellow: "var(--color-darkYellow)",
         darkGrey: "var(--color-darkGrey)",
         lightIndigo: "var(--color-lightIndigo)",
         lightGrey: "var(--color-lightGrey)",
          },
       gradientColorStops:{
         
-        yellow: "var(--color-yellow)",
+
+        lightYellow: "var(--color-lightYellow)",
+        darkYellow: "var(--color-darkYellow)",
         darkGrey: "var(--color-darkGrey)",
         lightIndigo: "var(--color-lightIndigo)",
         lightGrey: "var(--color-lightGrey)",
@@ -48,7 +55,9 @@ module.exports = {
       },
       backgroundColor: {
         
-        yellow: "var(--color-yellow)",
+
+        lightYellow: "var(--color-lightYellow)",
+        darkYellow: "var(--color-darkYellow)",
         darkGrey: "var(--color-darkGrey)",
         lightIndigo: "var(--color-lightIndigo)",
         lightGrey: "var(--color-lightGrey)",
@@ -56,7 +65,9 @@ module.exports = {
       },
       borderColor:{
         
-        yellow: "var(--color-yellow)",
+
+        lightYellow: "var(--color-lightYellow)",
+        darkYellow: "var(--color-darkYellow)",
         darkGrey: "var(--color-darkGrey)",
         lightIndigo: "var(--color-lightIndigo)",
         lightGrey: "var(--color-lightGrey)",
@@ -64,7 +75,9 @@ module.exports = {
       },
       ringColor:{
         
-        yellow: "var(--color-yellow)",
+
+        lightYellow: "var(--color-lightYellow)",
+        darkYellow: "var(--color-darkYellow)",
         darkGrey: "var(--color-darkGrey)",
         lightIndigo: "var(--color-lightIndigo)",
         lightGrey: "var(--color-lightGrey)",

@@ -8,6 +8,21 @@ const props = defineProps({
   },
   currentColor: String,
 });
+
+const emit = defineEmits(["update:modelValue"]);
+
+
+watch(
+  () => props.currentColor,
+  () => {
+    props.images.map((image, index) => {
+      if (image['color'] === props.currentColor) {
+        emit("update:modelValue", image['imgSrc']);
+      }
+    })
+    // emit("updateInput", searchInput.value);
+  }
+);
 </script>
 
 <template>

@@ -136,7 +136,7 @@ const products = [
 </script>
 
 <template>
-  <main class="pt-28">
+  <main class="py-28">
     <ProductsDetails v-for="(product, index) in products" :data="product" />
   </main>
 </template>

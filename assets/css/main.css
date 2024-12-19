@@ -131,7 +131,7 @@ input::placeholder {
    
   /* Handle */
   .scrollbar-style::-webkit-scrollbar-thumb {
-    background:  var(--color-darkGrey);
+    background:  var(--color-lightIndigo);
     border-radius: 90px;
     
   }

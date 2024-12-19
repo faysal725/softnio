@@ -24,12 +24,12 @@ const props = defineProps({
         <h1 class="text-lg font-semibold text-darkGrey">{{ title }}</h1>
       </div>
     </div>
-    <div class="mt-8 flow-root">
+    <div class="mt-2 flow-root">
       <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-          <table class="min-w-full divide-y divide-gray-300">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8 max-h-[600px] overflow-y-scroll scrollbar-style">
+          <table class="min-w-full divide-y divide-gray-300 ">
             <thead>
-              <tr>
+              <tr >
                 <th
                   scope="col"
                   class="py-3.5 pl-4 pr-3 text-left text-sm font-thin text-lightGrey sm:pl-0"
@@ -63,7 +63,7 @@ const props = defineProps({
                 </th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-gray-200">
+            <tbody class="divide-y divide-gray-200 max-h-28 overflow-y-auto">
               <tr v-for="product in productData" :key="product.email">
                 <td
                   class="whitespace-nowrap py-4 pl-4 pr-3 sm:pl-0 flex items-center gap-2"

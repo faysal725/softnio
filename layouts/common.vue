@@ -24,7 +24,7 @@ const openModal = ref(false);
     >
       Checkout
       <span class="bg-white px-1.5">{{
-        cartStore.products.length >= 1 ? cartStore.products.length : "0"
+        cartStore.products.length >= 1 ? cartStore.totalNoOfProducts : "0"
       }}</span>
     </button>
 
@@ -37,7 +37,7 @@ const openModal = ref(false);
       :showCloseBtn="true"
     >
       <div class="bg-white min-w-32 p-4 z-20 rounded-lg">
-        <Table title="Your Cart" :productData="cartStore.products"/>
+        <Table title="Your Cart" :productData="cartStore.products" :totalPrice="cartStore.total" :totalItem="cartStore.totalNoOfProducts"/>
       </div>
     </ModalContainer>
   </main>

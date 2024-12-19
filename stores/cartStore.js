@@ -8,6 +8,7 @@ export const useCartStore = defineStore("cartStore", {
     shouldOpen: false,
     products: [],
     total: 0,
+    totalNoOfProducts: 0,
   }),
   actions: {
     open(type, title, msg) {
@@ -44,5 +45,20 @@ export const useCartStore = defineStore("cartStore", {
     getProducts() {
       return this.products;
     },
+    calculateTotalPriceNProduct(){
+        let totalPrice = 0
+        let totalProducts = 0
+        this.products.map((product, index) => {
+            totalProducts = totalProducts + product['noOfItem']
+            totalPrice = product['price'] *product['noOfItem'] + totalPrice
+            console.log(totalPrice, product['noOfItem'])
+
+        })
+        console.log(totalPrice)
+        this.total = totalPrice
+        this.totalNoOfProducts = totalProducts
+    },
   },
 });
+
+

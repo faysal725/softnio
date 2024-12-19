@@ -3,18 +3,18 @@ const props = defineProps({
   title: String,
   productData: {
     type: Array,
-    default: [
-      {
-        name: "Lindsay Walton",
-        imgSrc: "/watch/purple.png",
-        color: "#816BFF",
-        size: "S",
-        noOfItem: "Member",
-        price: 12,
-      },
-    ],
+    default: [],
+  },
+  totalPrice: {
+    type: Number,
+    default: 0,
+  },
+  totalItem: {
+    type: Number,
+    default: 0,
   },
 });
+
 </script>
 
 <template>
@@ -95,7 +95,7 @@ const props = defineProps({
                 <td
                   class="whitespace-nowrap px-3 py-4 text-sm text-darkGrey font-semibold text-right"
                 >
-                  ${{ product.price }}
+                  ${{ product.price *product.noOfItem }}
                 </td>
               </tr>
 
@@ -109,22 +109,23 @@ const props = defineProps({
                 <td
                   class="whitespace-nowrap px-3 py-4 text-base text-darkGrey font-medium text-center"
                 >
-                  2
+                  {{ totalItem }}
                 </td>
                 <td
                   class="whitespace-nowrap pl-3 py-4 text-base text-darkGrey font-medium text-right"
                 >
-                  $350.00
+                  ${{ totalPrice }}
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <div class="flex justify-end gap-2 pt-4">
+
+        </div>
+        <div class="flex justify-end gap-2 pt-4">
             <ButtonHollow name="Continue Shopping" />
             <ButtonMd name="Checkout" classes="font-semibold"/>
           </div>
-        </div>
       </div>
     </div>
   </div>

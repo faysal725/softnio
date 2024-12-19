@@ -8,7 +8,7 @@ const props = defineProps({
 
 // stores
 const cartStore = useCartStore();
-const { setProduct } = cartStore;
+const { setProduct, calculateTotalPriceNProduct } = cartStore;
 
 let colors = ref([]);
 let sizes = ref([]);
@@ -59,6 +59,7 @@ function addProductToStore() {
   };
 
   setProduct(productData);
+  calculateTotalPriceNProduct();
 }
 
 extractColorsAndSizes();

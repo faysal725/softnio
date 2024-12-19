@@ -20,7 +20,6 @@ export const useCartStore = defineStore("cartStore", {
       return this.shouldOpen;
     },
     setProduct(productData) {
-      console.log(productData);
       if (this.products.length == 0) {
         this.products.push(productData);
       } else if (this.products.length > 0) {
@@ -32,7 +31,6 @@ export const useCartStore = defineStore("cartStore", {
           (product) => product["variationCode"] === productData["variationCode"]
         );
 
-        console.log(productIndex, "asdfasdf");
         if (productIndex == -1) {
           this.products.push(productData);
         } else {

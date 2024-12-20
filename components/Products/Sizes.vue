@@ -44,7 +44,7 @@ onMounted(() => {
         ]"
         @click="colorNPriceSection(size['size'], size['price'], size['oldPrice'])"
       >
-        <span class="text-lightIndigo font-bold">{{ size.size }}</span>
+        <span class=" font-bold" :class="currentSize === size['size'] ? 'text-lightIndigo' : 'text-darkGrey'">{{ size.size }}</span>
         <span class="text-sm text-lightGrey">${{ size.price }}</span>
       </div>
     </section>
